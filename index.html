@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Link to css  -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/weather-dashboard/assets/style.css">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
@@ -20,16 +17,16 @@
     
    <div class="container">
      <!-- Beginning of jumbotron  -->
-    <div class=" jumbotron-fluid bg-dark text-white text-center">
+    <div class="jumbotron-fluid text-white font-weight-bold text-center">
       <div class="container">
-        <h1 class="display-4 ">Weather Dashboard</h1>
+        <h1 class="display-4">Weather Dashboard</h1>
       </div>
     </div>
     <!-- Beginning of row 1 -->
     <div class="row">
       <!-- Beginning of col 1 in rwo 1 -->
       <div class="col-3 m-2 bg-light">
-        <h3>Search for a City:</h3> 
+        <h3><strong>Search for a City:</strong></h3> 
         <div class="input-group mb-2">
           <input type="text" class="form-control" id="city-input" aria-describedby="basic-addon2">
           <div class="input-group-append">
@@ -37,9 +34,8 @@
           </div>
         </div>
         <!-- Beginning of history cities box -->
-        <div class="card" style="width: 15rem;">
-          <ul id="city-list" class="list-group list-group-flush">
-            <!-- <li class="list-group-item"></li> -->
+        <div class="card rounded bg-secondary" style="width: 15rem;">
+          <ul id="city-list" class="list-group list-group-flush><!-- <li class="list-group-item"></li> -->
           </ul>
         </div>
       </div>
@@ -47,7 +43,7 @@
       <div class="col-8 m-2">
         <!-- Beginning of row 1 in col 2 -->
         <div class="row-12">
-          <div class="card">
+          <div class="card font-weight-bold">
             <div id="today-weather" class="card-body">
               <!-- <h3>City:</h3>
               <p></p>
@@ -65,32 +61,7 @@
         <!-- Beginning of row 3 in col 2 -->
         <br>
         <div id ="boxes" class="row">
-          <!-- Blue box 1
-         <div id="box2" class="col-2 m-2 bg-primary">
-           <h4></h4> -->
-           <!-- <img>
-           <p></p>
-           <p></p> -->
-         <!-- </div> -->
-         <!-- Blue box 2 -->
-         <!-- <div class="col-2 m-2 bg-primary"> -->
-          
-        <!-- </div> -->
-        <!-- Blue box 3-->
-        <!-- <div class="col-2 m-2 bg-primary">
-          <h4></h4> -->
-          
-        <!-- </div> -->
-        <!-- Blue box 4 -->
-        <!-- <div class="col-2 m-2 bg-primary">
-         <h4></h4> -->
-         
-       <!-- </div> -->
-       <!-- Blue box 5 -->
-       <!-- <div class="col-2 m-2 bg-primary"> -->
-        
-      <!-- </div> -->
-        
+ 
         </div>
       </div>
     </div>
@@ -103,6 +74,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="/weather-dashboard/assets/java.js"></script>
   </body>
 </html>

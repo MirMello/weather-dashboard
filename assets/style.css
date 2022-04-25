@@ -4,19 +4,50 @@ ion-icon {
     --ionicon-stroke-width: 80px;
   }
 
+.jumbotron-fluid {
+    padding: 0;
+    background-image: linear-gradient(to right, blue, darkblue );
+    position: center;
+}
+
 .green{
   background-color: green;
+  border-radius: 2px;
+  color: white;
+  font-weight: normal;
+  padding: 3px 10px 3px 10px;
 }
 .yellow{
   background-color: yellow;
+  border-radius: 2px;
+  color: white;
+  font-weight: normal;
+  padding: 3px 10px 3px 10px;
 }
 .orange{
   background-color: orange;
+  border-radius: 2px;
+  color: white;
+  font-weight: normal;
+  margin: 2px 4px 2px 4px;
+  padding: 3px 10px 3px 10px;
 }
 .red{
   background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-weight: normal;
+  padding: 3px 10px 3px 10px;
 }
 
 .purple{
   background-color: purple;
+  border-radius: 2px;
+  color: white;
+  font-weight: normal;
+  padding: 3px 10px 3px 10px;
+}
+
+.card {
+    background-color: #6666;
 }

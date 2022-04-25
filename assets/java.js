@@ -2,22 +2,21 @@ var cityList =$("#city-list");
 var cities = [];
 var key = "e454d5a5ee810d6c829328de6207bfd4";
 
-//Format for day
+
 function FormatDay(date){
     var date = new Date();
     console.log(date);
     var month = date.getMonth()+1;
     var day = date.getDate();
     
-    var dayOutput = date.getFullYear() + '/' +
+    var dayOutput = 
         (month<10 ? '0' : '') + month + '/' +
-        (day<10 ? '0' : '') + day;
+        (day<10 ? '0' : '') + day + '/' + date.getFullYear();
     return dayOutput;
 }
 
 
 
-//Calling function init();
 init();
 
 //Function init();
@@ -30,19 +29,14 @@ function init(){
     if (storedCities !== null) {
         cities = storedCities;
       }
-    // Render cities to the DOM
     renderCities();
-    // console.log(cities);
 }
 
-//Function StoreCities()
 function storeCities(){
-   // Stringify and set "cities" key in localStorage to cities array
   localStorage.setItem("cities", JSON.stringify(cities));
   console.log(localStorage);
 }
 
-//Function renderCities()
 function renderCities() {
     // Clear cityList element
     // cityList.text = "";
@@ -87,7 +81,6 @@ function renderCities() {
   renderCities();
   });
 
-  //Function get Response Weather 
   
   function getResponseWeather(cityName){
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +cityName+ "&appid=" + key; 
@@ -105,10 +98,11 @@ function renderCities() {
       var TempetureToNum = parseInt((response.main.temp)* 9/5 - 459);
       var cityTemperature = $("<p>").text("Tempeture: "+ TempetureToNum + " °F");
       $("#today-weather").append(cityTemperature);
-      var cityHumidity = $("<p>").text("Humidity: "+ response.main.humidity + " %");
-      $("#today-weather").append(cityHumidity);
       var cityWindSpeed = $("<p>").text("Wind Speed: "+ response.wind.speed + " MPH");
       $("#today-weather").append(cityWindSpeed);
+      var cityHumidity = $("<p>").text("Humidity: "+ response.main.humidity + " %");
+      $("#today-weather").append(cityHumidity);
+
       var CoordLon = response.coord.lon;
       var CoordLat = response.coord.lat;
     
@@ -124,19 +118,19 @@ function renderCities() {
             $("#today-weather").append(cityUVp);
             console.log(typeof responseuv.value);
             if(responseuv.value > 0 && responseuv.value <=2){
-                cityUV.attr("class","green")
+                cityUV.attr("class","green", "text-white", "rounded")
             }
             else if (responseuv.value > 2 && responseuv.value <= 5){
-                cityUV.attr("class","yellow")
+                cityUV.attr("class","yellow", "text-white", "rounded")
             }
             else if (responseuv.value >5 && responseuv.value <= 7){
-                cityUV.attr("class","orange")
+                cityUV.attr("class","orange", "text-white", "rounded")
             }
             else if (responseuv.value >7 && responseuv.value <= 10){
-                cityUV.attr("class","red")
+                cityUV.attr("class","red", "text-white", "rounded")
             }
             else{
-                cityUV.attr("class","purple")
+                cityUV.attr("class","purple", "text-white", "rounded")
             }
         });
     
@@ -159,9 +153,9 @@ function renderCities() {
                     console.log(date);
                     var month = date.getMonth()+1;
                     var day = date.getDate();
-                    var dayOutput = date.getFullYear() + '/' +
+                    var dayOutput =
                     (month<10 ? '0' : '') + month + '/' +
-                    (day<10 ? '0' : '') + day;
+                    (day<10 ? '0' : '') + day + '/' + date.getFullYear();
                     var Fivedayh4 = $("<h6>").text(dayOutput);
                     //Set src to the imags
                     var imgtag = $("<img>");
