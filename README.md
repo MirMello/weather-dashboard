@@ -12,3 +12,4 @@ The city is then added to the search history
 
 ![Screenshot (5)](https://user-images.githubusercontent.com/96323393/165008778-cc9e9619-def9-48ca-8686-710eb99d3a0e.png)
 
+https://mirmello.github.io/weather-dashboard/
