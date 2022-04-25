@@ -5,9 +5,13 @@ ion-icon {
   }
 
 .jumbotron-fluid {
-    padding: 0;
+    margin: 0;
     background-image: linear-gradient(to right, blue, darkblue );
-    position: center;
+}
+
+p {
+    color: white;
+    font-weight: bold;
 }
 
 .green{

@@ -118,19 +118,19 @@ function renderCities() {
             $("#today-weather").append(cityUVp);
             console.log(typeof responseuv.value);
             if(responseuv.value > 0 && responseuv.value <=2){
-                cityUV.attr("class","green", "text-white", "rounded")
+                cityUV.attr("class","green")
             }
             else if (responseuv.value > 2 && responseuv.value <= 5){
-                cityUV.attr("class","yellow", "text-white", "rounded")
+                cityUV.attr("class","yellow")
             }
             else if (responseuv.value >5 && responseuv.value <= 7){
-                cityUV.attr("class","orange", "text-white", "rounded")
+                cityUV.attr("class","orange")
             }
             else if (responseuv.value >7 && responseuv.value <= 10){
-                cityUV.attr("class","red", "text-white", "rounded")
+                cityUV.attr("class","red")
             }
             else{
-                cityUV.attr("class","purple", "text-white", "rounded")
+                cityUV.attr("class","purple")
             }
         });
     
@@ -172,10 +172,12 @@ function renderCities() {
                     console.log(skyconditions);
                     var TempetureToNum = parseInt((pTemperatureK)* 9/5 - 459);
                     var pTemperature = $("<p>").text("Tempeture: "+ TempetureToNum + " °F");
+                    var pWind = $("<p>").text("Wind: " + response5day.list[i].main.wind_speed + " MPHS")
                     var pHumidity = $("<p>").text("Humidity: "+ response5day.list[i].main.humidity + " %");
                     FivedayDiv.append(Fivedayh4);
                     FivedayDiv.append(imgtag);
                     FivedayDiv.append(pTemperature);
+                    FivedayDiv.append(pWind)
                     FivedayDiv.append(pHumidity);
                     $("#boxes").append(FivedayDiv);
                     console.log(response5day);
