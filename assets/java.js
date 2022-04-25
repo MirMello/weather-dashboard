@@ -92,15 +92,14 @@ function renderCities() {
       method: "GET"
     }).then(function(response) {
         
-      // Create a new table row element
       cityTitle = $("<h3>").text(response.name + " "+ FormatDay());
       $("#today-weather").append(cityTitle);
       var TempetureToNum = parseInt((response.main.temp)* 9/5 - 459);
-      var cityTemperature = $("<p>").text("Tempeture: "+ TempetureToNum + " °F");
+      var cityTemperature = $("<h5>").text("Tempeture: "+ TempetureToNum + " °F");
       $("#today-weather").append(cityTemperature);
-      var cityWindSpeed = $("<p>").text("Wind Speed: "+ response.wind.speed + " MPH");
+      var cityWindSpeed = $("<h5>").text("Wind: "+ response.wind.speed + " MPH");
       $("#today-weather").append(cityWindSpeed);
-      var cityHumidity = $("<p>").text("Humidity: "+ response.main.humidity + " %");
+      var cityHumidity = $("<h5>").text("Humidity: "+ response.main.humidity + " %");
       $("#today-weather").append(cityHumidity);
 
       var CoordLon = response.coord.lon;
@@ -113,7 +112,7 @@ function renderCities() {
             method: "GET"
         }).then(function(responseuv) {
             var cityUV = $("<span>").text(responseuv.value);
-            var cityUVp = $("<p>").text("UV Index: ");
+            var cityUVp = $("<h5>").text("UV Index: ");
             cityUVp.append(cityUV);
             $("#today-weather").append(cityUVp);
             console.log(typeof responseuv.value);
@@ -146,7 +145,7 @@ function renderCities() {
                 var read_date = response5day.list[i].dt;
                 if(response5day.list[i].dt != response5day.list[i+1].dt){
                     var FivedayDiv = $("<div>");
-                    FivedayDiv.attr("class","col-3 m-2 bg-primary")
+                    FivedayDiv.attr("class","col-3 m-2 bg-dark font-weight-bold text-white")
                     var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
                     d.setUTCSeconds(read_date);
                     var date = d;
@@ -156,7 +155,7 @@ function renderCities() {
                     var dayOutput =
                     (month<10 ? '0' : '') + month + '/' +
                     (day<10 ? '0' : '') + day + '/' + date.getFullYear();
-                    var Fivedayh4 = $("<h6>").text(dayOutput);
+                    var Fivedayh4 = $("<h4>").text(dayOutput);
                     //Set src to the imags
                     var imgtag = $("<img>");
                     var skyconditions = response5day.list[i].weather[0].main;
@@ -171,8 +170,9 @@ function renderCities() {
                     var pTemperatureK = response5day.list[i].main.temp;
                     console.log(skyconditions);
                     var TempetureToNum = parseInt((pTemperatureK)* 9/5 - 459);
-                    var pTemperature = $("<p>").text("Tempeture: "+ TempetureToNum + " °F");
-                    var pWind = $("<p>").text("Wind: " + response5day.list[i].main.wind_speed + " MPHS")
+                    var pTemperature = $("<p>").text("Temp: "+ TempetureToNum + " °F");
+                    var pWind = $("<p>").text("Wind: "+ response5day.list[i].wind.speed + " MPH");
+                    $("#today-weather").append(cityWindSpeed);
                     var pHumidity = $("<p>").text("Humidity: "+ response5day.list[i].main.humidity + " %");
                     FivedayDiv.append(Fivedayh4);
                     FivedayDiv.append(imgtag);

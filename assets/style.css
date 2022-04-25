@@ -9,6 +9,14 @@ ion-icon {
     background-image: linear-gradient(to right, blue, darkblue );
 }
 
+h3 {
+    font-weight: bold;
+}
+
+h5 {
+    padding: 8px;
+}
+
 p {
     color: white;
     font-weight: bold;
